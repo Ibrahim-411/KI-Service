@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automotoservice - Login & Signup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #8B0000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #8B0000;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #8B0000;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #a00000;
+        }
+
+        .toggle {
+            margin-top: 10px;
+            color: #8B0000;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="form-container">
+        <h2 id="form-title">Login</h2>
+        <input type="text" id="username" placeholder="Username" class="hidden">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button id="action-button" onclick="handleSubmit()">Login</button>
+        <p class="toggle" onclick="toggleForm()">Don't have an account? Signup</p>
+    </div>
+
+    <script>
+        function toggleForm() {
+            const title = document.getElementById('form-title');
+            const username = document.getElementById('username');
+            const actionButton = document.getElementById('action-button');
+            const toggleText = document.querySelector('.toggle');
+
+            if (title.innerText === "Login") {
+                title.innerText = "Signup";
+                username.classList.remove('hidden');
+                actionButton.innerText = "Signup";
+                toggleText.innerText = "Already have an account? Login";
+            } else {
+                title.innerText = "Login";
+                username.classList.add('hidden');
+                actionButton.innerText = "Login";
+                toggleText.innerText = "Don't have an account? Signup";
+            }
+        }
+
+        function handleSubmit() {
+            const title = document.getElementById('form-title').innerText;
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const username = document.getElementById('username') ? document.getElementById('username').value.trim() : "";
+
+            if (title === "Signup") {
+                if (!username || !email || !password) {
+                    alert("Please fill in all fields.");
+                    return;
+                }
+
+                let users = JSON.parse(localStorage.getItem('users')) || [];
+                if (users.some(user => user.email === email)) {
+                    alert("Email already exists.");
+                    return;
+                }
+
+                users.push({ email, password, username });
+                localStorage.setItem('users', JSON.stringify(users));
+                alert("Signup successful!");
+            }
+
+            // Check for login
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+            let user = users.find(user => user.email === email && user.password === password);
+
+            if (user) {
+                localStorage.setItem("currentUser", JSON.stringify(user)); // ✅ Save login session
+                alert("Login successful!");
+                window.location.href = "home.html"; // ✅ Redirect to home.html instead of index.html
+            } else {
+                alert("Invalid email or password.");
+            }
+        }
+
+
+        function logout() {
+            localStorage.removeItem("currentUser"); // Remove user data
+            window.location.href = "home.html"; // Redirect to login
+        }
+    </script>
+</body>
+
+</html>

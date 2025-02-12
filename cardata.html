@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    .navbar {
+        background-color: #343a40;
+        padding: 15px;
+        color: white;
+        text-align: center;
+    }
+
+    .side-nav {
+        height: 100vh;
+        width: 250px;
+        position: fixed;
+        background-color: #343a40;
+        color: white;
+        padding: 50px 0;
+        transform: translateX(-250px);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1050;
+    }
+
+    .side-nav.open {
+        transform: translateX(0);
+    }
+
+    .side-nav ul {
+        margin-top: 2rem;
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .side-nav li {
+        padding: 15px 20px;
+        cursor: pointer;
+        font-weight: bold;
+        text-align: left;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .side-nav li:hover {
+        background-color: #495057;
+    }
+
+    .content {
+        margin-left: 20px;
+        padding: 20px;
+        transition: margin-left 0.3s ease-in-out;
+    }
+
+    .side-nav.open~.content {
+        margin-left: 260px;
+    }
+
+    .card {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .card-header {
+        background-color: #343a40;
+        color: white;
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        position: fixed;
+        top: 18px;
+        left: 8px;
+        z-index: 1060;
+    }
+
+    .hamburger div {
+        width: 27px;
+        height: 4px;
+        background-color: black;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 800px) {
+        body {
+            font-size: 14px;
+        }
+
+        .side-nav {
+            transform: translateX(-250px);
+            padding: 10px;
+        }
+
+        .side-nav.open {
+            transform: translateX(0);
+        }
+
+        .content {
+            margin-left: 0;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .side-nav.open {
+            width: 100%;
+        }
+    }
+</style>
+
+<body>
+    <!-- Hamburger Menu -->
+    <div class="hamburger" onclick="toggleNav()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Side Navigation -->
+    <div class="side-nav" id="sideNav">
+        <ul>
+            <li onclick="showSection('carData')">Car Bookings</li>
+            <li onclick="showSection('bikeData')">Bike Bookings</li>
+            <li onclick="showSection('contactData')">Contact</li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <!-- Car Booking Data Section -->
+        <div id="carData" class="section fade-in">
+            <div class="card mb-4">
+                <div class="card-header">Car Booking Data</div>
+                <div class="card-body">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Car Name</th>
+                                <th>Your Number</th>
+                                <th>Problem</th>
+                                <th>Location</th>
+                                <th>Additional Notes</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="carDataTable"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bike Booking Data Section -->
+        <div id="bikeData" class="section fade-in" style="display: none;">
+            <div class="card mb-4">
+                <div class="card-header">Bike Booking Data</div>
+                <div class="card-body">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Bike Name</th>
+                                <th>Your Number</th>
+                                <th>Problem</th>
+                                <th>Location</th>
+                                <th>Additional Notes</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bikeDataTable"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Data Section -->
+        <div id="contactData" class="section fade-in" style="display: none;">
+            <div class="card mb-4">
+                <div class="card-header">Contact Data</div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Message</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contactDataTable"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chart Data Section -->
+        <div id="chartContainer" class="card mb-4" style="width: fit-content; display: flex; margin: auto;">
+            <div class="card-body" height="340px" width="340px">
+                <canvas id="combinedChart" class="chart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCombinedChart();
+            showSection('carData');
+
+            // Load data for each section
+            loadCarData();
+            loadBikeData();
+            loadContactData();
+
+            // Add event listeners to forms for data handling
+            document.getElementById('carBookingForm').addEventListener('submit', handleCarFormSubmit);
+            document.getElementById('bikeBookingForm').addEventListener('submit', handleBikeFormSubmit);
+            document.getElementById('contactForm').addEventListener('submit', handleContactFormSubmit);
+        });
+
+        function toggleNav() {
+            const sideNav = document.getElementById('sideNav');
+            sideNav.classList.toggle('open');
+        }
+
+        function showSection(sectionId) {
+            const sections = ['carData', 'bikeData', 'contactData'];
+            sections.forEach(id => {
+                document.getElementById(id).style.display = id === sectionId ? 'block' : 'none';
+            });
+        }
+
+        // Car Form Handling
+        function handleCarFormSubmit(e) {
+            e.preventDefault();
+            const carName = document.getElementById('carName').value.trim();
+            const yourNumber = document.getElementById('yourNumber').value.trim();
+            const carProblem = document.getElementById('carProblem').value.trim();
+            const location = document.getElementById('location').value.trim();
+            const additionalNotes = document.getElementById('additionalNotes').value.trim();
+
+            if (!carName || !yourNumber || !carProblem || !location) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            const carData = JSON.parse(localStorage.getItem('carData')) || [];
+            carData.push({ carName, yourNumber, carProblem, location, additionalNotes });
+            localStorage.setItem('carData', JSON.stringify(carData));
+
+            document.getElementById('carBookingForm').reset();
+            loadCarData(); // Update car table
+            loadCombinedChart(); // Update chart
+        }
+
+        // Bike Form Handling
+        function handleBikeFormSubmit(e) {
+            e.preventDefault();
+            const bikeName = document.getElementById('bikeName').value.trim();
+            const yourNumberBike = document.getElementById('yourNumberBike').value.trim();
+            const bikeProblem = document.getElementById('bikeProblem').value.trim();
+            const location = document.getElementById('bikeLocation').value.trim();
+
+            if (!bikeName || !yourNumberBike || !bikeProblem || !location) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            const bikeData = JSON.parse(localStorage.getItem('bikeData')) || [];
+            bikeData.push({ bikeName, yourNumberBike, bikeProblem, location });
+            localStorage.setItem('bikeData', JSON.stringify(bikeData));
+
+            document.getElementById('bikeBookingForm').reset();
+            loadBikeData(); // Update bike table
+            loadCombinedChart(); // Update chart
+        }
+
+        // Contact Form Handling
+        function handleContactFormSubmit(e) {
+            e.preventDefault();
+            const contactName = document.getElementById('contactName').value.trim();
+            const contactEmail = document.getElementById('contactEmail').value.trim();
+            const contactMessage = document.getElementById('contactMessage').value.trim();
+
+            if (!contactName || !contactEmail || !contactMessage) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            const contactData = JSON.parse(localStorage.getItem('contactData')) || [];
+            contactData.push({ contactName, contactEmail, contactMessage });
+            localStorage.setItem('contactData', JSON.stringify(contactData));
+
+            document.getElementById('contactForm').reset();
+            loadContactData(); // Update contact table
+            loadCombinedChart(); // Update chart
+        }
+
+        // Load and render car data in table
+        function loadCarData() {
+            const carData = JSON.parse(localStorage.getItem('carData')) || [];
+            const carTableBody = document.getElementById('carDataTable');
+            carTableBody.innerHTML = ''; // Clear existing data
+
+            carData.forEach((car, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+    <td>${index + 1}</td>
+    <td>${car.carName || 'N/A'}</td>
+    <td>${car.yourNumber || 'N/A'}</td>
+    <td>${car.carProblem || 'N/A'}</td>
+    <td>${car.location || 'N/A'}</td>
+    <td>${car.additionalNotes || 'N/A'}</td>
+    <td><button class="btn btn-danger btn-sm" onclick="deleteCar(${index})">Delete</button></td>
+`;
+                carTableBody.appendChild(row);
+            });
+        }
+
+        // Load and render bike data in table
+        function loadBikeData() {
+            const bikeData = JSON.parse(localStorage.getItem('bikeData')) || [];
+            const bikeTableBody = document.getElementById('bikeDataTable');
+            bikeTableBody.innerHTML = '';
+
+            bikeData.forEach((bike, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${bike.bikeName || 'N/A'}</td>
+            <td>${bike.yourNumberBike || 'N/A'}</td>
+            <td>${bike.bikeProblem || 'N/A'}</td>
+            <td>${bike.location || 'N/A'}</td>
+            <td>${bike.additionalNotes || 'N/A'}</td>
+            <td><button class="btn btn-danger btn-sm" onclick="deleteBike(${index})">Delete</button></td>
+        `;
+                bikeTableBody.appendChild(row);
+            });
+        }
+
+        // Load and render contact data in table
+        function loadContactData() {
+            const contactData = JSON.parse(localStorage.getItem('contactData')) || [];
+            const contactTableBody = document.getElementById('contactDataTable');
+            contactTableBody.innerHTML = ''; // Clear the table body before rendering
+
+            contactData.forEach((contact, index) => {
+                const row = document.createElement('tr'); // Create a table row
+
+                row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${contact.contactName || 'N/A'}</td>
+            <td>${contact.contactNumber || 'N/A'}</td>
+            <td>${contact.email || 'N/A'}</td>
+            <td>${contact.message || 'N/A'}</td>
+            <td>
+                <button class="btn btn-danger btn-sm" onclick="deleteContact(${index})">Delete</button>
+            </td>
+        `;
+
+                contactTableBody.appendChild(row); // Append the row to the table body
+            });
+        }
+
+
+
+        // Delete a car entry
+        function deleteCar(index) {
+            const carData = JSON.parse(localStorage.getItem('carData')) || [];
+            carData.splice(index, 1); // Remove the selected entry
+            localStorage.setItem('carData', JSON.stringify(carData));
+
+            loadCarData(); // Update table
+            loadCombinedChart(); // Update chart
+        }
+
+        // Delete a bike entry
+        function deleteBike(index) {
+            const bikeData = JSON.parse(localStorage.getItem('bikeData')) || [];
+            bikeData.splice(index, 1); // Remove the selected entry
+            localStorage.setItem('bikeData', JSON.stringify(bikeData));
+
+            loadBikeData(); // Update table
+            loadCombinedChart(); // Update chart
+        }
+
+        // Delete a contact entry
+        function deleteContact(index) {
+            const contactData = JSON.parse(localStorage.getItem('contactData')) || [];
+            contactData.splice(index, 1);
+            localStorage.setItem('contactData', JSON.stringify(contactData));
+            loadContactData();
+            loadCombinedChart(); // Update the chart after deletion
+        }
+
+
+        // Update the chart based on data
+        function loadCombinedChart() {
+            const carData = JSON.parse(localStorage.getItem('carData')) || [];
+            const bikeData = JSON.parse(localStorage.getItem('bikeData')) || [];
+            const contactData = JSON.parse(localStorage.getItem('contactData')) || [];
+
+            const totalCars = carData.length;
+            const totalBikes = bikeData.length;
+            const totalContacts = contactData.length;
+
+            const chartElement = document.getElementById('combinedChart');
+            const existingChart = Chart.getChart(chartElement);
+
+            if (existingChart) {
+                existingChart.destroy();
+            }
+
+            new Chart(chartElement, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Car Bookings', 'Bike Bookings', 'Contacts'],
+                    datasets: [
+                        {
+                            data: [totalCars, totalBikes, totalContacts],
+                            backgroundColor: ['#ff6384', '#36a2eb', '#ffd740'],
+                        },
+                    ],
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'bottom',
+                        },
+                    },
+                },
+            });
+        }
+
+        function showSection(sectionId) {
+            const sections = ['carData', 'bikeData', 'contactData'];
+            sections.forEach((id) => {
+                document.getElementById(id).style.display = id === sectionId ? 'block' : 'none';
+            });
+        }
+
+        // Example event listener to switch tables
+        document.getElementById('carTab').addEventListener('click', () => showSection('carData'));
+        document.getElementById('bikeTab').addEventListener('click', () => showSection('bikeData'));
+        document.getElementById('contactTab').addEventListener('click', () => showSection('contactData'));
+
+    </script>
+
+</body>
+
+</html>

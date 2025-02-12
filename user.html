@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Users</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            text-align: center;
+        }
+        h2 {
+            color: #8B0000;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #8B0000;
+            color: white;
+        }
+        .delete-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .delete-btn:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Registered Users</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="users-list">
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+            let usersList = document.getElementById("users-list");
+            
+            function renderUsers() {
+                usersList.innerHTML = "";
+                users.forEach((user, index) => {
+                    let row = document.createElement("tr");
+                    row.innerHTML = `<td>${user.username}</td><td>${user.email}</td>
+                                    <td><button class="delete-btn" onclick="deleteUser(${index})">Delete</button></td>`;
+                    usersList.appendChild(row);
+                });
+            }
+            
+            window.deleteUser = function(index) {
+                users.splice(index, 1);
+                localStorage.setItem('users', JSON.stringify(users));
+                renderUsers();
+            }
+            
+            window.addEventListener("storage", function(event) {
+                if (event.key === "users") {
+                    users = JSON.parse(localStorage.getItem("users")) || [];
+                    renderUsers();
+                }
+            });
+            
+            renderUsers();
+        });
+    </script>
+</body>
+</html>
