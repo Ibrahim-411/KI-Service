@@ -58,6 +58,7 @@
         cursor: pointer;
         font-weight: bold;
         text-align: left;
+        font-size: 20px;
         transition: background-color 0.3s ease-in-out;
     }
 
@@ -99,36 +100,38 @@
     }
 
     .hamburger div {
-        width: 27px;
+        width: 25px;
         height: 4px;
-        background-color: black;
+        background-color: #ff1a1a;
         margin: 6px 0;
         transition: 0.4s;
     }
 
-    /* Responsive Styles */
+    /* Add this to handle content shift on mobile */
     @media (max-width: 800px) {
-        body {
-            font-size: 14px;
+        .side-nav.open~.content {
+            margin-left: 0 !important;
+            /* Prevent content shift */
         }
+    }
 
+    @media (max-width: 500px) {
         .side-nav {
-            transform: translateX(-250px);
-            padding: 10px;
+            width: 70%;
+            /* More consistent mobile width */
+            transform: translateX(-100%);
         }
 
         .side-nav.open {
             transform: translateX(0);
-        }
-
-        .content {
-            margin-left: 0;
-        }
-    }
-
-    @media (max-width: 400px) {
-        .side-nav.open {
             width: 100%;
+            height: -webkit-fill-available;
+        }
+
+        /* Optional: Adjust hamburger position for better alignment */
+        .hamburger {
+            top: 15px;
+            left: 15px;
         }
     }
 </style>
@@ -152,24 +155,27 @@
 
     <div class="content">
         <!-- Car Booking Data Section -->
+
         <div id="carData" class="section fade-in">
             <div class="card mb-4">
                 <div class="card-header">Car Booking Data</div>
                 <div class="card-body">
-                    <table class="table table-bordered table-striped">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Car Name</th>
-                                <th>Your Number</th>
-                                <th>Problem</th>
-                                <th>Location</th>
-                                <th>Additional Notes</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="carDataTable"></tbody>
-                    </table>
+                    <div style="overflow-x: auto;">
+                        <table class="table table-bordered table-striped" style="width: max-content;">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Car Name</th>
+                                    <th>Your Number</th>
+                                    <th>Problem</th>
+                                    <th>Location</th>
+                                    <th>Additional Notes</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="carDataTable"></tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -179,20 +185,22 @@
             <div class="card mb-4">
                 <div class="card-header">Bike Booking Data</div>
                 <div class="card-body">
-                    <table class="table table-bordered table-striped">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Bike Name</th>
-                                <th>Your Number</th>
-                                <th>Problem</th>
-                                <th>Location</th>
-                                <th>Additional Notes</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="bikeDataTable"></tbody>
-                    </table>
+                    <div style="overflow-x: auto;">
+                        <table class="table table-bordered table-striped" style="width: max-content;">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Bike Name</th>
+                                    <th>Your Number</th>
+                                    <th>Problem</th>
+                                    <th>Location</th>
+                                    <th>Additional Notes</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bikeDataTable"></tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -202,19 +210,21 @@
             <div class="card mb-4">
                 <div class="card-header">Contact Data</div>
                 <div class="card-body">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Name</th>
-                                <th>Phone</th>
-                                <th>Email</th>
-                                <th>Message</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="contactDataTable"></tbody>
-                    </table>
+                    <div style="overflow-x: auto;">
+                        <table class="table" style="width: max-content;">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th>Message</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="contactDataTable"></tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

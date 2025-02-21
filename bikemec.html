@@ -87,7 +87,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="home.html" class="nav-item nav-link active">Home</a>
+                <a href="home.html" class="nav-item nav-link ">Home</a>
                 <a href="about.html" class="nav-item nav-link">About</a>
                 <a href="service.html" class="nav-item nav-link ">Services</a>
                 <a href="/carmec.html" class="nav-item nav-link">Car Mechanic Shop</a>
@@ -261,20 +261,76 @@
                 </div>
 
 
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/team-2.jpg" alt="">
-                            <div class="team-overlay position-absolute start-0 top-0 w-100 h-100">
-                                <a class="btn btn-square mx-1" href="/cardata.html"><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            <img class="img-fluid" src="img/bike2.jpg" alt="">
+                            <div
+                                class="team-overlay position-absolute start-0 top-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                <!-- Info Icon -->
+                                <a class="btn btn-square mx-1" title="Info" data-bs-toggle="modal"
+                                    data-bs-target="#infoModal1">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="bg-light text-center p-4">
-                            <h5 class="fw-bold mb-0">Full Name</h5>
-                            <small>Designation</small>
+                        <div class="bg-light text-center p-4 position-relative">
+                            <!-- Shop Name -->
+                            <h5 class="fw-bold mb-1 mt-4 text-center">Jeevan Motor</h5>
+                            <!-- Rating Section -->
+                            <div class="rating-badge mt-2">
+                                <span class="text-success fw-bold me-1">4.8</span>
+                                <i class="fas fa-star text-warning"></i>
+                                <small class="text-muted">(578)</small>
+                            </div>
+                            <!-- Service Type -->
+                            <div class="service-type mt-2">
+                                <small class="badge bg-primary text-white px-2 py-1">Motorcycle</small>
+                                <small class="badge bg-primary text-white px-2 py-1"> Scooter Dealers</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Modal -->
+                <div class="modal fade" id="infoModal1" tabindex="-1" aria-labelledby="infoModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header" style="border-bottom: none;">
+                                <h5 class="modal-title w-100 text-center" id="infoModalLabel"
+                                    style="font-size: 1.8rem;">
+                                    Jeevan Motor</h5>
+                                <!-- Close Button -->
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <!-- Left Column: Enlarged Text Details -->
+                                    <div class="col-md-6 d-flex flex-column justify-content-center">
+                                        <p class="mb-3" style="font-size: 1.2rem;"><strong>Phone:</strong>
+                                            07947433621
+                                        </p>
+                                        <p class="mb-3" style="font-size: 1.2rem;"><strong>Location:</strong>
+
+                                            Pvc Complex, Mc Road, M C Road, Ambur - 635802
+                                        </p>
+                                        <!-- Book Now Button -->
+                                        <button class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#bikeBookingModal">
+                                            Open Booking Form
+                                        </button>
+                                    </div>
+                                    <!-- Right Column: Google Map -->
+                                    <div class="col-md-6">
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15563.407433671073!2d78.70415035541993!3d12.788126300000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad08e0e00955e5%3A0xb95c30a387d3bddc!2sJeevan%20Motor%20-%20Hero%20MotoCorp!5e0!3m2!1sen!2sin!4v1740047705364!5m2!1sen!2sin"
+                                            width="100%" height="250" style="border:0;" allowfullscreen=""
+                                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

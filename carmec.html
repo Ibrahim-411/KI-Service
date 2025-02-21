@@ -87,7 +87,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="home.html" class="nav-item nav-link active">Home</a>
+                <a href="home.html" class="nav-item nav-link ">Home</a>
                 <a href="about.html" class="nav-item nav-link">About</a>
                 <a href="service.html" class="nav-item nav-link ">Services</a>
                 <a href="/carmec.html" class="nav-item nav-link active">Car Mechanic Shop</a>
@@ -105,7 +105,7 @@
         <div class="container-fluid page-header-inner py-5">
             <div class="container text-center">
                 <h1 class="display-3 text-white mb-3 animated slideInDown">Car Mechanic Shop</h1>
-                
+
             </div>
         </div>
     </div>
@@ -167,7 +167,7 @@
                                 <div class="row">
                                     <!-- Left Column: Enlarged Text Details -->
                                     <div class="col-md-6 d-flex flex-column justify-content-center">
-                                        <p class="mb-3" style="font-size: 1.2rem;"><strong>Phone:</strong> +1234567890
+                                        <p class="mb-3" style="font-size: 1.2rem;"><strong>Phone:</strong> 3457867492
                                         </p>
                                         <p class="mb-3" style="font-size: 1.2rem;"><strong>Location:</strong> Pernambut
                                             Ambur Road, Thuthipet</p>
@@ -264,116 +264,497 @@
                 </div>
 
 
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/team-2.jpg" alt="">
-                            <div class="team-overlay position-absolute start-0 top-0 w-100 h-100">
-                                <a class="btn btn-square mx-1" href="/cardata.html"><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="bg-light text-center p-4">
-                            <h5 class="fw-bold mb-0">Full Name</h5>
-                            <small>Designation</small>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="team-item">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/team-3.jpg" alt="">
-                            <div class="team-overlay position-absolute start-0 top-0 w-100 h-100">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            <img class="img-fluid" src="img/cm2.avif" alt="">
+                            <div
+                                class="team-overlay position-absolute start-0 top-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                <!-- Info Icon -->
+                                <a class="btn btn-square mx-1" title="Info" data-bs-toggle="modal"
+                                    data-bs-target="#infoModal2">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="bg-light text-center p-4">
-                            <h5 class="fw-bold mb-0">Full Name</h5>
-                            <small>Designation</small>
+                        <div class="bg-light text-center p-4 position-relative">
+                            <!-- Shop Name -->
+                            <h5 class="fw-bold mb-1 mt-4 text-center">Jk Motors</h5>
+                            <!-- Rating Section -->
+                            <div class="rating-badge mt-2">
+                                <span class="text-success fw-bold me-1">4.7 </span>
+                                <i class="fas fa-star text-warning"></i>
+                                <small class="text-muted">(8)</small>
+                            </div>
+                            <!-- Service Type -->
+                            <div class="service-type mt-2">
+                                <small class="badge bg-primary text-white px-2 py-1">Repair And Services</small>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!-- Info Modal -->
+                <div class="modal fade" id="infoModal2" tabindex="-1" aria-labelledby="infoModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header" style="border-bottom: none;">
+                                <h5 class="modal-title w-100 text-center" id="infoModalLabel"
+                                    style="font-size: 1.8rem;">
+                                    Jk Motors</h5>
+                                <!-- Close Button -->
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <!-- Left Column: Enlarged Text Details -->
+                                    <div class="col-md-6 d-flex flex-column justify-content-center">
+                                        <p class="mb-3" style="font-size: 1.2rem;"><strong>Phone:</strong> 07942688821
+                                        </p>
+                                        <p class="mb-3" style="font-size: 1.2rem;"><strong>Location:</strong> Sanan
+                                            Kuppam, Sanan Kuppam, Near Rajive Ganthi School, Ambur - 635802 (Sunthara
+                                            Vinayagar Kovi Back Side)</p>
+                                        <!-- Book Now Button -->
+                                        <button class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#carBookingModal">
+                                            Open Booking Form
+                                        </button>
+                                    </div>
+                                    <!-- Right Column: Google Map -->
+                                    <div class="col-md-6">
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.1234567890123!2d78.7165432109876!3d12.7912345678901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3badc9f123456789%3A0xabcdef1234567890!2sChinna%20Venkatasami%20St%2C%20Sanan%20Kuppam%2C%20Ambur%2C%20Tamil%20Nadu%20635802%2C%20India!5e0!3m2!1sen!2sin!4v1694954738564!5m2!1sen!2sin"
+                                            width="100%" height="250" style="border:0;" allowfullscreen=""
+                                            loading="lazy">
+                                        </iframe>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="team-item">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/team-4.jpg" alt="">
-                            <div class="team-overlay position-absolute start-0 top-0 w-100 h-100">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            <img class="img-fluid" src="img/cm3.avif" alt="">
+                            <div
+                                class="team-overlay position-absolute start-0 top-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                <!-- Info Icon -->
+                                <a class="btn btn-square mx-1" title="Info" data-bs-toggle="modal"
+                                    data-bs-target="#infoModal3">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="bg-light text-center p-4">
-                            <h5 class="fw-bold mb-0">Full Name</h5>
-                            <small>Designation</small>
+                        <div class="bg-light text-center p-4 position-relative">
+                            <!-- Shop Name -->
+                            <h5 class="fw-bold mb-1 mt-4 text-center">Sri Venkateswara Mechanical Garage</h5>
+                            <!-- Rating Section -->
+                            <div class="rating-badge mt-2">
+                                <span class="text-success fw-bold me-1">4.0 </span>
+                                <i class="fas fa-star text-warning"></i>
+                                <small class="text-muted">(7)</small>
+                            </div>
+                            <!-- Service Type -->
+                            <div class="service-type mt-2">
+                                <small class="badge bg-primary text-white px-2 py-1">Repair And Services</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Info Modal -->
+                <div class="modal fade" id="infoModal3" tabindex="-1" aria-labelledby="infoModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header" style="border-bottom: none;">
+                                <h5 class="modal-title w-100 text-center" id="infoModalLabel"
+                                    style="font-size: 1.8rem;">
+                                    Sri Venkateswara Mechanical Garage</h5>
+                                <!-- Close Button -->
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <!-- Left Column: Enlarged Text Details -->
+                                    <div class="col-md-6 d-flex flex-column justify-content-center">
+                                        <p class="mb-3" style="font-size: 1.2rem;"><strong>Phone:</strong> 07942688821
+                                        </p>
+                                        <p class="mb-3" style="font-size: 1.2rem;"><strong>Location:</strong>Vivekananda
+                                            Nagar, Ambur Bypass Road, Devalapuram, Ambur - 635802 (Near Palar Bridge)
+                                        </p>
+                                        <!-- Book Now Button -->
+                                        <button class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#carBookingModal">
+                                            Open Booking Form
+                                        </button>
+                                    </div>
+                                    <!-- Right Column: Google Map -->
+                                    <div class="col-md-6">
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.318741073743!2d78.72000000000001!3d12.790000000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad74abcdef123%3A0xabcdefabcdefabcd!2sVivekananda%20Nagar%2C%20Ambur%20Bypass%20Road%2C%20Devalapuram%2C%20Ambur%20-%20635802%20(Near%20Palar%20Bridge)!5e0!3m2!1sen!2sin!4v1708350000000!5m2!1sen!2sin"
+                                            width="100%" height="250" style="border:0;" allowfullscreen=""
+                                            loading="lazy">
+                                        </iframe>
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/team-2.jpg" alt="">
-                            <div class="team-overlay position-absolute start-0 top-0 w-100 h-100">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            <img class="img-fluid" src="img/cm4.avif" alt="">
+                            <div
+                                class="team-overlay position-absolute start-0 top-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                <!-- Info Icon -->
+                                <a class="btn btn-square mx-1" title="Info" data-bs-toggle="modal"
+                                    data-bs-target="#infoModal4">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="bg-light text-center p-4">
-                            <h5 class="fw-bold mb-0">Full Name</h5>
-                            <small>Designation</small>
+                        <div class="bg-light text-center p-4 position-relative">
+                            <!-- Shop Name -->
+                            <h5 class="fw-bold mb-1 mt-4 text-center">Af Auto Mart</h5>
+                            <!-- Rating Section -->
+                            <div class="rating-badge mt-2">
+                                <span class="text-success fw-bold me-1">4.6 </span>
+                                <i class="fas fa-star text-warning"></i>
+                                <small class="text-muted">(6)</small>
+                            </div>
+                            <!-- Service Type -->
+                            <div class="service-type mt-2">
+                                <small class="badge bg-primary text-white px-2 py-1">Repair And Services</small>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/team-3.jpg" alt="">
-                            <div class="team-overlay position-absolute start-0 top-0 w-100 h-100">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                <!-- Info Modal -->
+                <div class="modal fade" id="infoModal4" tabindex="-1" aria-labelledby="infoModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header" style="border-bottom: none;">
+                                <h5 class="modal-title w-100 text-center" id="infoModalLabel"
+                                    style="font-size: 1.8rem;">
+                                    Af Auto Mart</h5>
+                                <!-- Close Button -->
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
                             </div>
-                        </div>
-                        <div class="bg-light text-center p-4">
-                            <h5 class="fw-bold mb-0">Full Name</h5>
-                            <small>Designation</small>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <!-- Left Column: Enlarged Text Details -->
+                                    <div class="col-md-6 d-flex flex-column justify-content-center">
+                                        <p class="mb-3" style="font-size: 1.2rem;"><strong>Phone:</strong> 07947149933
+                                        </p>
+                                        <p class="mb-3" style="font-size: 1.2rem;"><strong>Location:</strong>
+                                            5, Gandhi Nagar, Ambur Plantation R F, Thithipaet Road, Ambur - 635802 </p>
+                                        <!-- Book Now Button -->
+                                        <button class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#carBookingModal">
+                                            Open Booking Form
+                                        </button>
+                                    </div>
+                                    <!-- Right Column: Google Map -->
+                                    <div class="col-md-6">
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d31127.472102214808!2d78.7185663726591!3d12.782795201929883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s%205%2C%20Gandhi%20Nagar%2C%20Ambur%20Plantation%20R%20F%2C%20Thithipaet%20Road%2C%20Ambur%20-%20635802!5e0!3m2!1sen!2sin!4v1740042578092!5m2!1sen!2sin"
+                                            width="100%" height="250" style="border:0;" allowfullscreen=""
+                                            loading="lazy"></iframe>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/team-4.jpg" alt="">
-                            <div class="team-overlay position-absolute start-0 top-0 w-100 h-100">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            <img class="img-fluid" src="img/cm5.avif" alt="">
+                            <div
+                                class="team-overlay position-absolute start-0 top-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                <!-- Info Icon -->
+                                <a class="btn btn-square mx-1" title="Info" data-bs-toggle="modal"
+                                    data-bs-target="#infoModal5">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="bg-light text-center p-4">
-                            <h5 class="fw-bold mb-0">Full Name</h5>
-                            <small>Designation</small>
+                        <div class="bg-light text-center p-4 position-relative">
+                            <!-- Shop Name -->
+                            <h5 class="fw-bold mb-1 mt-4 text-center">Kp Cars</h5>
+                            <!-- Rating Section -->
+                            <div class="rating-badge mt-2">
+                                <span class="text-success fw-bold me-1">4.5</span>
+                                <i class="fas fa-star text-warning"></i>
+                                <small class="text-muted">(4)</small>
+                            </div>
+                            <!-- Service Type -->
+                            <div class="service-type mt-2">
+                                <small class="badge bg-primary text-white px-2 py-1">Car Dealers </small>
+                                <small class="badge bg-primary text-white px-2 py-1">Second Hand
+                                </small>
+                                <small class="badge bg-primary text-white px-2 py-1">Repair And Services</small>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/team-1.jpg" alt="">
-                            <div class="team-overlay position-absolute start-0 top-0 w-100 h-100">
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                <!-- Info Modal -->
+                <div class="modal fade" id="infoModal5" tabindex="-1" aria-labelledby="infoModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header" style="border-bottom: none;">
+                                <h5 class="modal-title w-100 text-center" id="infoModalLabel"
+                                    style="font-size: 1.8rem;">
+                                    Kp Cars</h5>
+                                <!-- Close Button -->
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <!-- Left Column: Enlarged Text Details -->
+                                    <div class="col-md-6 d-flex flex-column justify-content-center">
+                                        <p class="mb-3" style="font-size: 1.2rem;"><strong>Phone:</strong> 07947112433
+                                        </p>
+                                        <p class="mb-3" style="font-size: 1.2rem;"><strong>Location:</strong>No 10, Mc
+                                            Road, MC Road, Ambur - 635802 (Near Mantha Karai Water Tank) </p>
+                                        <!-- Book Now Button -->
+                                        <button class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#carBookingModal">
+                                            Open Booking Form
+                                        </button>
+                                    </div>
+                                    <!-- Right Column: Google Map -->
+                                    <div class="col-md-6">
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3891.0921074285116!2d78.7097342733643!3d12.772530087524817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad09b251588287%3A0x3f9f6aaa9793ca9d!2sK%20P%20Cars%20-%20Used%20Car%20Dealer!5e0!3m2!1sen!2sin!4v1740043136078!5m2!1sen!2sin"
+                                            width="100%" height="250" style="border:0;" allowfullscreen=""
+                                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="bg-light text-center p-4">
-                            <h5 class="fw-bold mb-0">Full Name</h5>
-                            <small>Designation</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/cm6.avif" alt="">
+                            <div
+                                class="team-overlay position-absolute start-0 top-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                <!-- Info Icon -->
+                                <a class="btn btn-square mx-1" title="Info" data-bs-toggle="modal"
+                                    data-bs-target="#infoModal6">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bg-light text-center p-4 position-relative">
+                            <!-- Shop Name -->
+                            <h5 class="fw-bold mb-1 mt-4 text-center">Om Sri Siva Shakthi Auto Garage</h5>
+                            <!-- Rating Section -->
+                            <div class="rating-badge mt-2">
+                                <span class="text-success fw-bold me-1">4.7 </span>
+                                <i class="fas fa-star text-warning"></i>
+                                <small class="text-muted">(8)</small>
+                            </div>
+                            <!-- Service Type -->
+                            <div class="service-type mt-2">
+                                <small class="badge bg-primary text-white px-2 py-1">Repair And Services</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Info Modal -->
+                <div class="modal fade" id="infoModal6" tabindex="-1" aria-labelledby="infoModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header" style="border-bottom: none;">
+                                <h5 class="modal-title w-100 text-center" id="infoModalLabel"
+                                    style="font-size: 1.8rem;">
+                                    Om Sri Siva Shakthi Auto Garage</h5>
+                                <!-- Close Button -->
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <!-- Left Column: Enlarged Text Details -->
+                                    <div class="col-md-6 d-flex flex-column justify-content-center">
+                                        <p class="mb-3" style="font-size: 1.2rem;"><strong>Phone:</strong> 07947411617
+                                        </p>
+                                        <p class="mb-3" style="font-size: 1.2rem;"><strong>Location:</strong>
+                                            Palamaner Road, Krishnavaram, Ambur - 635802 </p>
+                                        <!-- Book Now Button -->
+                                        <button class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#carBookingModal">
+                                            Open Booking Form
+                                        </button>
+                                    </div>
+                                    <!-- Right Column: Google Map -->
+                                    <div class="col-md-6">
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d62247.1919671559!2d78.66803403524793!3d12.814204471386383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sPalamaner%20Road%2C%20Krishnavaram%2C%20Ambur%20-%20635802%20!5e0!3m2!1sen!2sin!4v1740044306373!5m2!1sen!2sin"
+                                            width="100%" height="250" style="border:0;" allowfullscreen=""
+                                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/cm7.avif" alt="">
+                            <div
+                                class="team-overlay position-absolute start-0 top-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                <!-- Info Icon -->
+                                <a class="btn btn-square mx-1" title="Info" data-bs-toggle="modal"
+                                    data-bs-target="#infoModal2">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bg-light text-center p-4 position-relative">
+                            <!-- Shop Name -->
+                            <h5 class="fw-bold mb-1 mt-4 text-center">Jk Motors7</h5>
+                            <!-- Rating Section -->
+                            <div class="rating-badge mt-2">
+                                <span class="text-success fw-bold me-1">4.7 </span>
+                                <i class="fas fa-star text-warning"></i>
+                                <small class="text-muted">(8)</small>
+                            </div>
+                            <!-- Service Type -->
+                            <div class="service-type mt-2">
+                                <small class="badge bg-primary text-white px-2 py-1">Repair And Services</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Info Modal -->
+                <div class="modal fade" id="infoModal2" tabindex="-1" aria-labelledby="infoModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header" style="border-bottom: none;">
+                                <h5 class="modal-title w-100 text-center" id="infoModalLabel"
+                                    style="font-size: 1.8rem;">
+                                    Jk Motors</h5>
+                                <!-- Close Button -->
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <!-- Left Column: Enlarged Text Details -->
+                                    <div class="col-md-6 d-flex flex-column justify-content-center">
+                                        <p class="mb-3" style="font-size: 1.2rem;"><strong>Phone:</strong> 07942688821
+                                        </p>
+                                        <p class="mb-3" style="font-size: 1.2rem;"><strong>Location:</strong> Sanan
+                                            Kuppam, Sanan Kuppam, Near Rajive Ganthi School, Ambur - 635802 (Sunthara
+                                            Vinayagar Kovi Back Side)</p>
+                                        <!-- Book Now Button -->
+                                        <button class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#carBookingModal">
+                                            Open Booking Form
+                                        </button>
+                                    </div>
+                                    <!-- Right Column: Google Map -->
+                                    <div class="col-md-6">
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.1234567890123!2d78.7165432109876!3d12.7912345678901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3badc9f123456789%3A0xabcdef1234567890!2sChinna%20Venkatasami%20St%2C%20Sanan%20Kuppam%2C%20Ambur%2C%20Tamil%20Nadu%20635802%2C%20India!5e0!3m2!1sen!2sin!4v1694954738564!5m2!1sen!2sin"
+                                            width="100%" height="250" style="border:0;" allowfullscreen=""
+                                            loading="lazy">
+                                        </iframe>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/cm8.avif" alt="">
+                            <div
+                                class="team-overlay position-absolute start-0 top-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                <!-- Info Icon -->
+                                <a class="btn btn-square mx-1" title="Info" data-bs-toggle="modal"
+                                    data-bs-target="#infoModal2">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bg-light text-center p-4 position-relative">
+                            <!-- Shop Name -->
+                            <h5 class="fw-bold mb-1 mt-4 text-center">Jk Motors8</h5>
+                            <!-- Rating Section -->
+                            <div class="rating-badge mt-2">
+                                <span class="text-success fw-bold me-1">4.7 </span>
+                                <i class="fas fa-star text-warning"></i>
+                                <small class="text-muted">(8)</small>
+                            </div>
+                            <!-- Service Type -->
+                            <div class="service-type mt-2">
+                                <small class="badge bg-primary text-white px-2 py-1">Repair And Services</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Info Modal -->
+                <div class="modal fade" id="infoModal2" tabindex="-1" aria-labelledby="infoModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header" style="border-bottom: none;">
+                                <h5 class="modal-title w-100 text-center" id="infoModalLabel"
+                                    style="font-size: 1.8rem;">
+                                    Jk Motors</h5>
+                                <!-- Close Button -->
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <!-- Left Column: Enlarged Text Details -->
+                                    <div class="col-md-6 d-flex flex-column justify-content-center">
+                                        <p class="mb-3" style="font-size: 1.2rem;"><strong>Phone:</strong> 07942688821
+                                        </p>
+                                        <p class="mb-3" style="font-size: 1.2rem;"><strong>Location:</strong> Sanan
+                                            Kuppam, Sanan Kuppam, Near Rajive Ganthi School, Ambur - 635802 (Sunthara
+                                            Vinayagar Kovi Back Side)</p>
+                                        <!-- Book Now Button -->
+                                        <button class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#carBookingModal">
+                                            Open Booking Form
+                                        </button>
+                                    </div>
+                                    <!-- Right Column: Google Map -->
+                                    <div class="col-md-6">
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.1234567890123!2d78.7165432109876!3d12.7912345678901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3badc9f123456789%3A0xabcdef1234567890!2sChinna%20Venkatasami%20St%2C%20Sanan%20Kuppam%2C%20Ambur%2C%20Tamil%20Nadu%20635802%2C%20India!5e0!3m2!1sen!2sin!4v1694954738564!5m2!1sen!2sin"
+                                            width="100%" height="250" style="border:0;" allowfullscreen=""
+                                            loading="lazy">
+                                        </iframe>
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

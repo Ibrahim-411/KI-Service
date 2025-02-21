@@ -482,3 +482,26 @@
 .service-box:hover .service-overlay {
     opacity: 1;
 }
+
+.bs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    width: auto;
+}
+
+@media (max-width: 768px) {
+    .bs {
+        justify-content: center;
+    }
+}
+
+.swiper-slide img {
+    width: 150px;
+    height: auto;
+}
+
+.swiper-wrapper {
+    display: flex;
+    justify-content: center;
+}
