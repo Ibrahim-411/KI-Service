@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Vehicle Service</title>
+    <title>About</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -163,6 +163,28 @@
             max-width: 92%;
         }
     }
+
+    .footer-logo {
+        flex: 1;
+    }
+
+    .text-center {
+        flex: 2;
+        text-align: center;
+    }
+
+    .back-to-top {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
 </style>
 
 <body>
@@ -180,27 +202,23 @@
     <div class="container-fluid bg-light p-0">
         <div class="row gx-0 d-none d-lg-flex">
             <div class="col-lg-7 px-5 text-start">
-                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
-                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
-                    <small>123 Street, New York, USA</small>
-                </div>
                 <div class="h-100 d-inline-flex align-items-center py-3">
-                    <small class="far fa-clock text-primary me-2"></small>
-                    <small>Mon - Fri : 09.00 AM - 09.00 PM</small>
+                    <small class="fa fa-envelope text-primary me-2"></small>
+                    <small>ibrahim19062005@gmail.com</small>
                 </div>
             </div>
             <div class="col-lg-5 px-5 text-end">
                 <div class="h-100 d-inline-flex align-items-center py-3 me-4">
                     <small class="fa fa-phone-alt text-primary me-2"></small>
-                    <small>+012 345 6789</small>
+                    <small>+91 7603989556</small>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center">
-                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i
+                    <a class="btn btn-sm-square bg-white text-primary me-1" href="https://www.facebook.com/profile.php?id=100075102425466"><i
                             class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i
+                    <a class="btn btn-sm-square bg-white text-primary me-1" href="https://x.com/IBRAHIMKI118321"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-1" href="https://www.linkedin.com/in/ibrahim-k-896a53289/"><i
                             class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-0" href=""><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-0" href="https://www.linkedin.com/in/ibrahim-k-896a53289/"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
@@ -236,7 +254,7 @@
         <div class="container-fluid page-header-inner py-5">
             <div class="container text-center">
                 <h1 class="display-3 text-white mb-3 animated slideInDown">About Us</h1>
-               
+
             </div>
         </div>
     </div>
@@ -245,9 +263,12 @@
 
 
     <section class="why-choose-us">
+        <!-- Topic Box -->
         <div class="card main-card">
-            <h2 style="font-size: 28px;">Why Choose <span>Us?</span></h2>
+            <h2>Why Choose <span>Us?</span></h2>
         </div>
+    
+        <!-- Features Boxes -->
         <div class="card-container">
             <div class="card">
                 <i class="icon">🎧</i>
@@ -361,33 +382,43 @@
 
 
 
-    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-12 text-center">
-                    <h4 class="text-light mb-4">Contact Us</h4>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>ibrahim19062005@gmail.com</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 7603989556</p>
-                    <div class="d-flex justify-content-center pt-2">
-                        <a class="btn btn-outline-light btn-social me-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social me-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social me-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light py-4">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center text-center">
+
+            <!-- Logo Section -->
+            <div class="footer-logo mb-3 mb-md-0 text-center text-md-start">
+                <img src="/img/Screenshot_2025-01-30_074123-red-car (1).png" alt="Auto Moto Service Logo" width="200">
             </div>
-        </div>
-        <div class="container">
-            <div class="copyright text-center">
-                &copy; <a class="border-bottom" href="#">KI-SERVICE</a>, All Rights Reserved.
+
+            <!-- Copyright Section (Centered) -->
+            <div class="flex-grow-1 d-flex  order-md-2">
+                <p class="mb-0">&copy; 2025 Auto Moto Service. All rights reserved.</p>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="d-flex gap-2 order-md-3">
+                <a href="https://www.linkedin.com/company/automotoservice" target="_blank"
+                    class="btn btn-light btn-circle">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.facebook.com/automotoservice" target="_blank" class="btn btn-light btn-circle">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/automotoservice" target="_blank" class="btn btn-light btn-circle">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.twitter.com/automotoservice" target="_blank" class="btn btn-light btn-circle">
+                    <i class="fab fa-twitter"></i>
+                </a>
             </div>
         </div>
     </div>
-    
-
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <!-- Footer End -->
+    <!-- Back to Top Button (Fixed Outside Footer) -->
+    <a href="#" class="btn btn-danger rounded-circle back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
 
     <!-- JavaScript Libraries -->
